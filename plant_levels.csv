@@ -1,0 +1,5 @@
+General Plant Type,Ideal Temperature Range Min (°C),Ideal Temperature Range Max (°C),Ideal Moisture Range Min (%),Ideal Moisture Range Max (%),Ideal Humidity Range Min (%),Ideal Humidity Range Max (%)
+general,21.11,26.67,20,60,40,80
+desert,4.44,26.67,0,20,40,50
+flowering,15.56,26.67,20,40,40,70
+foliage,21.11,26.67,20,40,60,80
