@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Send Data to Raspberry Pi</title>
+</head>
+<body>
+    <form id="dataForm">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="plant">Type of Plant:</label>
+        <input type="text" id="plant" name="plant" required><br>
+
+        <label for="updates">Number of updates:</label>
+        <select id="updates" name="updates">
+            <option value="every_hour">Every Hour</option>
+            <option value="every_2_hours">Every 2 Hours</option>
+            <option value="twice_a_day">Twice a Day</option>
+            <option value="once_a_day">Once a Day</option>
+        </select><br>
+
+        <button type="button" id="submitButton">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById('submitButton').addEventListener('click', function() {
+            var email = document.getElementById('email').value;
+            var plant = document.getElementById('plant').value;
+            var updates = document.getElementById('updates').value;
+
+            var data = {
+                email: email,
+                plant: plant,
+                updates: updates
+            };
+
+            fetch('http://RASPBERRY_PI_IP_ADDRESS/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
