@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from plant_monitor import PlantMonitor
 myMonitor = PlantMonitor()
 app = Flask(__name__)
