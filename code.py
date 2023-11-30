@@ -33,191 +33,191 @@ def send_email(receiver_email, plant_type):
 
     #check the plant type
 
-	while(bool):
+    while(bool):
 
-	    if(plant_type == "Desert"):
+        if(plant_type == "Desert"):
 
-	        ideal_low_temp = 40
+            ideal_low_temp = 40
 
-	        ideal_high_temp = 80
+            ideal_high_temp = 80
 
-	        ideal_low_moisture = 1
+            ideal_low_moisture = 1
 
-	        ideal_high_moisture = 20
+            ideal_high_moisture = 20
 
-	        ideal_low_humidity = 40
+            ideal_low_humidity = 40
 
-	        ideal_high_humidity = 50
+            ideal_high_humidity = 50
 
-	        bool = False
+            bool = False
 
-	    elif(plant_type == "Flowering"):
+        elif(plant_type == "Flowering"):
 
-	        ideal_low_temp = 60
+            ideal_low_temp = 60
 
-	        ideal_high_temp = 80
+            ideal_high_temp = 80
 
-	        ideal_low_moisture = 20
+            ideal_low_moisture = 20
 
-	        ideal_high_moisture = 40
+            ideal_high_moisture = 40
 
-	        ideal_low_humidity = 40
+            ideal_low_humidity = 40
 
-	        ideal_high_humidity = 70
+            ideal_high_humidity = 70
 
-	        bool = False
+            bool = False
 
-	    elif(plant_type == "Foliage"):
+        elif(plant_type == "Foliage"):
 
-	        ideal_low_temp = 70
+            ideal_low_temp = 70
 
-	        ideal_high_temp = 80
+            ideal_high_temp = 80
 
-	        ideal_low_moisture = 20
+            ideal_low_moisture = 20
 
-	        ideal_high_moisture = 40
+            ideal_high_moisture = 40
 
-	        ideal_low_humidity = 60
+            ideal_low_humidity = 60
 
-	        ideal_high_humidity = 80
+            ideal_high_humidity = 80
 
-	        bool = False
+            bool = False
 
-	    else:
+        else:
 
-	        print("Invalid plant type was entered!")
+            print("Invalid plant type was entered!")
 
-	        plant_type = input("ReEnter Plant Type:")
+            plant_type = input("ReEnter Plant Type:")
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	#creates the message based on how the collected data compares to the ideal levels
+    #creates the message based on how the collected data compares to the ideal levels
 
-	email_subject = "Plant Health Update"
+    email_subject = "Plant Health Update"
 
-	email_message = (
+    email_message = (
 
-	    f"Subject: {email_subject}\n\n"
+        f"Subject: {email_subject}\n\n"
 
-	    f"For your plant Type: {plant_type}\n\n"
+        f"For your plant Type: {plant_type}\n\n"
 
-	    f"\tTemperature: {temp}F\n"
+        f"\tTemperature: {temp}F\n"
 
-	    f"\tMoisture: {moisture}%\n"
+        f"\tMoisture: {moisture}%\n"
 
-	    f"\tHumidity: {humidity}%\n\n"
+        f"\tHumidity: {humidity}%\n\n"
 
-	)
+    )
 
-	
+    
 
-	
+    
 
-	# Add additional information based on conditions
+    # Add additional information based on conditions
 
-	if ideal_low_temp <= temp <= ideal_high_temp and ideal_low_moisture <= moisture <= ideal_high_moisture and ideal_low_humidity <= humidity <= ideal_high_humidity:
+    if ideal_low_temp <= temp <= ideal_high_temp and ideal_low_moisture <= moisture <= ideal_high_moisture and ideal_low_humidity <= humidity <= ideal_high_humidity:
 
-	    email_message += "\tStatus: Your plant is healthy!\n"
+        email_message += "\tStatus: Your plant is healthy!\n"
 
-	else:
+    else:
 
-	    email_message += "\tAlerts:\n"
+        email_message += "\tAlerts:\n"
 
-	    if ideal_low_temp > temp:
+        if ideal_low_temp > temp:
 
-	        email_message += f"\t\t- Temperature is too low! (Current: {temp}F, Ideal: {ideal_low_temp}-{ideal_high_temp}F)\n"
+            email_message += f"\t\t- Temperature is too low! (Current: {temp}F, Ideal: {ideal_low_temp}-{ideal_high_temp}F)\n"
 
-	    elif ideal_high_temp < temp:
+        elif ideal_high_temp < temp:
 
-	        email_message += f"\t\t- Temperature is too high! (Current: {temp}F, Ideal: {ideal_low_temp}-{ideal_high_temp}F)\n"
+            email_message += f"\t\t- Temperature is too high! (Current: {temp}F, Ideal: {ideal_low_temp}-{ideal_high_temp}F)\n"
 
-	
+    
 
-	
+    
 
-	    if ideal_low_moisture > moisture:
+        if ideal_low_moisture > moisture:
 
-	        email_message += f"\t\t- Moisture is too low! (Current: {moisture}%, Ideal: {ideal_low_moisture}-{ideal_high_moisture}%)\n"
+            email_message += f"\t\t- Moisture is too low! (Current: {moisture}%, Ideal: {ideal_low_moisture}-{ideal_high_moisture}%)\n"
 
-	    elif ideal_high_moisture < moisture:
+        elif ideal_high_moisture < moisture:
 
-	        email_message += f"\t\t- Moisture is too high! (Current: {moisture}%, Ideal: {ideal_low_moisture}-{ideal_high_moisture}%)\n"
+            email_message += f"\t\t- Moisture is too high! (Current: {moisture}%, Ideal: {ideal_low_moisture}-{ideal_high_moisture}%)\n"
 
-	
+    
 
-	
+    
 
-	    if ideal_low_humidity > humidity:
+        if ideal_low_humidity > humidity:
 
-	        email_message += f"\t\t- Humidity is too low! (Current: {humidity}%, Ideal: {ideal_low_humidity}-{ideal_high_humidity}%)\n"
+            email_message += f"\t\t- Humidity is too low! (Current: {humidity}%, Ideal: {ideal_low_humidity}-{ideal_high_humidity}%)\n"
 
-	    elif ideal_high_humidity < humidity:
+        elif ideal_high_humidity < humidity:
 
-	        email_message += f"\t\t- Humidity is too high! (Current: {humidity}%, Ideal: {ideal_low_humidity}-{ideal_high_humidity}%)\n"
+            email_message += f"\t\t- Humidity is too high! (Current: {humidity}%, Ideal: {ideal_low_humidity}-{ideal_high_humidity}%)\n"
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	# Format the message with email headers
+    # Format the message with email headers
 
-	email_subject = "Plant Health Update"
+    email_subject = "Plant Health Update"
 
-	email_message = f"Subject: {email_subject}\n\n{email_message}"
+    email_message = f"Subject: {email_subject}\n\n{email_message}"
 
-	
+    
 
-	
+    
 
-	print(email_message)  # This will now print the formatted email message
+    print(email_message)  # This will now print the formatted email message
 
-	
+    
 
-	
+    
 
-	# Connects and sends the email
+    # Connects and sends the email
 
-	port = 465  # For SSL
+    port = 465  # For SSL
 
-	smtp_server = "smtp.gmail.com"
+    smtp_server = "smtp.gmail.com"
 
-	sender_email = "EngeTeam10@gmail.com"  # Sender's address
+    sender_email = "EngeTeam10@gmail.com"  # Sender's address
 
-	receiver_email = "nathanc1@vt.edu"  # Receiver's address
+    receiver_email = "nathanc1@vt.edu"  # Receiver's address
 
-	password = "joei yaos maqa davd"  # Sender's email password
+    password = "joei yaos maqa davd"  # Sender's email password
 
-	
+    
 
-	
+    
 
-	context = ssl.create_default_context()
+    context = ssl.create_default_context()
 
-	with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+    with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
 
-	    server.login(sender_email, password)
+        server.login(sender_email, password)
 
-	    server.sendmail(sender_email, receiver_email, email_message)
+        server.sendmail(sender_email, receiver_email, email_message)
 
-	    
+        
 
-	    # For now, we'll just print a message
+        # For now, we'll just print a message
 
-	    print(f"Sending email to {receiver_email} for plant type {plant_type}")
+        print(f"Sending email to {receiver_email} for plant type {plant_type}")
 
 
 # Flask route to schedule emails
