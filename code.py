@@ -1,3 +1,12 @@
+from flask import Flask, request, jsonify
+
+from apscheduler.schedulers.background import BackgroundScheduler
+
+import atexit
+
+import smtplib
+
+import ssl
 from plant_monitor import PlantMonitor
 
 
