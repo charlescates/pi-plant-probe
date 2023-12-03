@@ -260,7 +260,7 @@ def schedule_email():
 
     # Remove existing job with the same ID if it exists
 
-    scheduler.remove_job(job_id=job_id, jobstore=None, silent=True)
+    #scheduler.remove_job(job_id=job_id, jobstore=None, silent=True) {{{temporarily removed}}}
 
 
     # Schedule the email job based on user-selected frequency
