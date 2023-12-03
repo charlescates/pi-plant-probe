@@ -237,7 +237,6 @@ def send_email(receiver_email, plant_type):
 # Flask route to schedule emails
 
 @app.route('/submit', methods=['POST'])
-
 def schedule_email():
 
     # Temporary initial email test email message
