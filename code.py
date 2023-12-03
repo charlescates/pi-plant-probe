@@ -41,7 +41,7 @@ def send_email(receiver_email, plant_type):
 
     temp = int(temp * 9/5 + 32)
 
-    bool = true
+    bool = True
 
     #check the plant type
 
