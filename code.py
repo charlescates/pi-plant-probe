@@ -28,6 +28,8 @@ def send_email(receiver_email, plant_type):
 
     # Initialize your PlantMonitor and retrieve the data
 
+    print("Start of send_email method")
+
     pm = PlantMonitor()
 
     humidity = int(pm.get_humidity())
@@ -218,10 +220,13 @@ def send_email(receiver_email, plant_type):
 
     with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
 
+        print("Attempting login.")
         server.login(sender_email, password)
+        print("Login successful.")
 
+        print("Attempting to send email.")
         server.sendmail(sender_email, receiver_email, email_message)
-
+        print("Sent email.")
         
 
         # For now, we'll just print a message
@@ -258,7 +263,9 @@ def schedule_email():
 
     if email_frequency == 'once_an_hour':
 
+        print("Attempting to schedule an email every hour.")
         scheduler.add_job(send_email, 'interval', hours=1, id=job_id, args=[receiver_email, plant_type])
+        print("Scheduled an email every hour.")
 
     elif email_frequency == 'once_every_two_hours':
 
