@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-
+from flask_cors import CORS
 from apscheduler.schedulers.background import BackgroundScheduler
 
 import atexit
@@ -11,6 +11,7 @@ from plant_monitor import PlantMonitor
 
 
 app = Flask(__name__)
+CORS(app)
 
 scheduler = BackgroundScheduler()
 
