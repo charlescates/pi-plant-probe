@@ -240,6 +240,10 @@ def send_email(receiver_email, plant_type):
 
 def schedule_email():
 
+    # Temporary initial email test email message
+    send_email("charlescates@vt.edu","Desert")
+    # End temporary message
+
     data = request.json
 
     receiver_email = data.get('email')
