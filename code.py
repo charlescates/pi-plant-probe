@@ -206,7 +206,7 @@ def send_email(receiver_email, plant_type):
 
     sender_email = "EngeTeam10@gmail.com"  # Sender's address
 
-    receiver_email = "nathanc1@vt.edu"  # Receiver's address
+    receiver_email = "charlescates@vt.edu"  # Receiver's address
 
     password = "joei yaos maqa davd"  # Sender's email password
 
