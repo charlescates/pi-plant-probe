@@ -207,7 +207,7 @@ def send_email(receiver_email, plant_type):
 
     sender_email = "EngeTeam10@gmail.com"  # Sender's address
 
-    receiver_email = "charlescates@vt.edu"  # Receiver's address
+    #receiver_email = "charlescates@vt.edu"  # Receiver's address
 
     password = "joei yaos maqa davd"  # Sender's email password
 
@@ -232,9 +232,7 @@ def send_email(receiver_email, plant_type):
 
 @app.route('/submit', methods=['POST'])
 def schedule_email():
-
-    # Temporary initial email test email message
-    send_email("charlescates@vt.edu","Desert")
+    
     # End temporary message
 
     data = request.json
@@ -245,6 +243,8 @@ def schedule_email():
 
     email_frequency = data.get('updates')
 
+    # Initial send
+    send_email(receiver_email,plant_type)
 
     # Define job id to allow for future modifications or removal
 
